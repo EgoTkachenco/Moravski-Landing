@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: $fz-caption;
+  font-weight: 500;
+  line-height: 28px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.dark {
+  color: $c-dark;
+}
+.white {
+  color: $c-white;
+}

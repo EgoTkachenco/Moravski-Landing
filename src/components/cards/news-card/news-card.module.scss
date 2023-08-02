@@ -1,0 +1,32 @@
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card_illustration {
+  position: relative;
+  height: 252px;
+}
+
+.card_top {
+  margin: 20px 0 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card_title {
+  font-size: $fz-h5;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.card_date {
+  font-size: $fz-caption;
+  color: $c-grey;
+  width: 90px;
+  text-align: right;
+}
+
+.card_description {
+  font-size: $fz-caption;
+}

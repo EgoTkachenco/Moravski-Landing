@@ -1,0 +1,13 @@
+.title {
+  margin-bottom: 50px;
+}
+
+.slide_image {
+  // width: 685px;
+  height: 400px;
+  position: relative;
+
+  img {
+    object-fit: cover;
+  }
+}

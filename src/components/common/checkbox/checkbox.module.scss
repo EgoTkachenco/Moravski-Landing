@@ -1,0 +1,9 @@
+.checkbox {
+  input:checked {
+    background-color: $c-yellow;
+    border-color: $c-yellow;
+  }
+  a {
+    color: inherit;
+  }
+}

@@ -1,0 +1,23 @@
+.support_card {
+  background-color: #e2e2e2;
+  background: url(/support_back.svg);
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  color: $c-dark;
+}
+.support_card_title {
+  max-width: 480px;
+}
+.support_card_buttons {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  button {
+    width: 200px;
+    justify-content: center;
+    white-space: nowrap;
+  }
+}

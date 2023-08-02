@@ -1,0 +1,21 @@
+.block {
+  background: $c-dark;
+  color: $c-white;
+}
+
+.block_inner {
+  max-width: $content-width;
+  width: 100%;
+  margin: 0 auto;
+  padding: 100px 0 20px;
+}
+
+.block_top {
+  font-weight: 600;
+  color: $c-grey;
+  margin-bottom: 35px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}

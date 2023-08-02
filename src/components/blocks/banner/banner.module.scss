@@ -1,0 +1,38 @@
+.container {
+  position: relative;
+  min-height: 100vh;
+  background-color: #b5b4b8;
+  background: url(/banner.png) center center no-repeat;
+  background-size: cover;
+  display: flex;
+}
+
+.content {
+  max-width: $content-width;
+  width: 100%;
+  margin: 0 auto;
+  padding: 160px 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.subtitle {
+  font-size: $fz-h2;
+  font-weight: 500;
+}
+
+.title {
+  font-size: $fz-h1;
+  line-height: 110px;
+  margin: 5px 0 40px;
+  font-weight: 400;
+}
+
+.bottom {
+  display: flex;
+  margin-top: auto;
+  align-items: center;
+  gap: 9px;
+}
