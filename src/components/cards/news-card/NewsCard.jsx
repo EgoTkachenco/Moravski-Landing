@@ -5,7 +5,7 @@ const NewsCard = ({ image, title, description, date, link }) => {
   return (
     <div className={styles.card}>
       <div className={styles.card_illustration}>
-        <Image src={image} fill />
+        <Image src={image} fill alt={title} />
       </div>
       <div className={styles.card_top}>
         <div className={styles.card_title}>{title}</div>

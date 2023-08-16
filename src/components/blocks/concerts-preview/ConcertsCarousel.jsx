@@ -45,7 +45,7 @@ const ConcertsCarousel = () => {
       // onSwiper={(swiper) => console.log(swiper)}
     >
       {slides.map((slide, i) => (
-        <SwiperSlide>
+        <SwiperSlide key={i}>
           <div className={styles.slide_image}>
             <Image src={slide} fill alt="slide" />
           </div>

@@ -7,15 +7,20 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.footer_inner}>
         <div className={styles.footer_left}>
-          <Image src="/logo-white.svg" width={181} height={53} />
+          <Image src="/logo-white.svg" width={181} height={53} alt="moravski" />
           <Text type="caption">© 2023 — Усі права захищені.</Text>
           <Link href="/policy" hideIcon>
             <Text type="caption">Політика конфіденціальності</Text>
           </Link>
           <div className={styles.footer_payment_methods}>
-            <Image src="/mastercard.svg" width={50} height={50} />
-            <Image src="/visa.svg" width={50} height={50} />
-            <Image src="/liqpay.svg" width={72} height={15} />
+            <Image
+              src="/mastercard.svg"
+              width={50}
+              height={50}
+              alt="mastercard"
+            />
+            <Image src="/visa.svg" width={50} height={50} alt="visa" />
+            <Image src="/liqpay.svg" width={72} height={15} alt="liqpay" />
           </div>
         </div>
 
@@ -36,10 +41,30 @@ const Footer = () => {
             <div className={styles.links_link}>+380 68 123 45 67</div>
             <div className={styles.links_link}>moravski.choir@gmail.com</div>
             <div className={styles.links_social}>
-              <Image src="/icons/youtube.svg" width={26} height={27} />
-              <Image src="/icons/facebook.svg" width={26} height={27} />
-              <Image src="/icons/instagram.svg" width={26} height={27} />
-              <Image src="/icons/tiktok.svg" width={26} height={27} />
+              <Image
+                src="/icons/youtube.svg"
+                width={26}
+                height={27}
+                alt="youtube"
+              />
+              <Image
+                src="/icons/facebook.svg"
+                width={26}
+                height={27}
+                alt="facebook"
+              />
+              <Image
+                src="/icons/instagram.svg"
+                width={26}
+                height={27}
+                alt="instagram"
+              />
+              <Image
+                src="/icons/tiktok.svg"
+                width={26}
+                height={27}
+                alt="tiktok"
+              />
             </div>
           </div>
         </div>

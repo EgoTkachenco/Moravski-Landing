@@ -5,6 +5,10 @@
   background: transparent;
   width: 100%;
   transition: all 0.3s;
+
+  @media (max-width: $m-md) {
+    padding: 16px;
+  }
 }
 
 .nav_white {
@@ -12,17 +16,48 @@
   background-color: $c-white;
 }
 
-.content {
+.nav_inner {
   max-width: $content-width;
   margin: auto;
   display: flex;
+  align-items: center;
+}
+
+.nav_content {
+  margin-left: 70px;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: $m-md) {
+    display: none;
+  }
+}
+
+.nav_menu_opened {
+  position: fixed;
+  top: 80px;
+  // padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0;
+  background-color: white;
+  width: 100%;
+  height: calc(100vh - 80px);
+  left: 0;
 }
 
 .nav_links {
   display: flex;
   gap: 30px;
   align-items: center;
-  margin: 0 auto 0 70px;
+
+  @media (max-width: $m-md) {
+    flex-direction: column;
+  }
 }
 
 .nav_link {
@@ -37,7 +72,66 @@
   display: flex;
   align-items: center;
   gap: 20px;
+
+  @media (max-width: $m-md) {
+    flex-direction: column;
+  }
 }
 
 .nav_language {
+  text-transform: uppercase;
+  cursor: pointer;
+
+  @include bottom-line-effect;
+}
+
+.nav_btn {
+  display: none;
+
+  margin-left: auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0;
+  height: 48px;
+  padding: 8px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  span {
+    width: 32px;
+    height: 2px;
+    background-color: $c-dark;
+    transition: all 0.3s;
+  }
+
+  &:hover span {
+    // transform: scale(1.05);
+  }
+
+  @media (max-width: $m-md) {
+    display: flex;
+  }
+}
+
+.nav_btn_opened {
+  position: relative;
+  & > :nth-child(1) {
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 25%;
+    transform: rotate(-45deg);
+  }
+  & > :nth-child(2) {
+    opacity: 0;
+    // transform: translate() rotate(90deg);
+  }
+  & > :nth-child(3) {
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 25%;
+    transform: rotate(45deg);
+  }
 }

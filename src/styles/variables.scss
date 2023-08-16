@@ -15,3 +15,28 @@ $fz-h4: 18px;
 $fz-h3: 34px;
 $fz-h2: 38px;
 $fz-h1: 100px;
+
+$m-sm: 720px;
+$m-md: 1100px;
+$m-xl: 1300px;
+
+@mixin bottom-line-effect {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 0;
+    background: $c-dark;
+    transition: width 0.3s;
+  }
+
+  &:hover {
+    &::before {
+      width: 100%;
+    }
+  }
+}
