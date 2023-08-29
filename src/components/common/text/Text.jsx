@@ -10,10 +10,14 @@ const tags = {
   text: 'p',
 }
 
-const Text = ({ children, as, type = 'text', className = '' }) => {
+const Text = ({ children, as, type = 'text', className = '', ...props }) => {
   const textClasses = `${styles[type]} ${className}`
   const Tag = as ? as : tags[type] || 'p'
-  return <Tag className={textClasses}>{children}</Tag>
+  return (
+    <Tag className={textClasses} {...props}>
+      {children}
+    </Tag>
+  )
 }
 
 export default Text

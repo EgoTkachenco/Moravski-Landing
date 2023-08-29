@@ -1,11 +1,11 @@
 'use client'
 import { useState, useEffect } from 'react'
 
-export const useIsTop = () => {
-  const [isTop, setIsTop] = useState(true)
+export const useIsTop = (allow) => {
+  const [isTop, setIsTop] = useState(!!allow)
 
   useEffect(() => {
-    if (typeof window === 'undefined') return
+    if (!allow || typeof window === 'undefined') return
 
     const onscroll = () => setIsTop(window.scrollY === 0)
     document.addEventListener('scroll', onscroll)
@@ -13,7 +13,7 @@ export const useIsTop = () => {
     return () => {
       document.removeEventListener('scroll', onscroll)
     }
-  }, [])
+  }, [allow])
 
   return isTop
 }

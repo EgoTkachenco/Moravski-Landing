@@ -6,9 +6,9 @@ import { useIsTop } from '@/hooks'
 import { useState } from 'react'
 import { useLang, useText } from '@/locales'
 
-const Navigation = () => {
+const Navigation = ({ animation = true }) => {
   const [open, setOpen] = useState(false)
-  const isTop = useIsTop()
+  const isTop = useIsTop(animation)
   const toggleMenu = () => setOpen(!open)
   const { lang, setLang } = useLang()
   const toggleLang = () => setLang(lang === 'ua' ? 'en' : 'ua')
@@ -36,7 +36,7 @@ const Navigation = () => {
               {lang}
             </div>
 
-            <Button color="yellow">Підтримати нас</Button>
+            <Button color="yellow">{t('support-us')}</Button>
           </div>
         </div>
 

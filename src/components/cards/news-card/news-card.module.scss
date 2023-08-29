@@ -1,6 +1,11 @@
 .card {
   display: flex;
   flex-direction: column;
+  transition: all 0.3s;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 .card_illustration {

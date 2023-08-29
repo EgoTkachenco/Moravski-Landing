@@ -42,6 +42,7 @@ const ConcertsCarousel = () => {
           spaceBetween: 0,
         },
       }}
+      data-aos="fade-up"
       // onSwiper={(swiper) => console.log(swiper)}
     >
       {slides.map((slide, i) => (

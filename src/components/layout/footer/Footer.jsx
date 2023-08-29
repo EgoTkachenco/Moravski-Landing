@@ -5,7 +5,7 @@ import styles from './footer.module.scss'
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <div className={styles.footer_inner}>
+      <div className={styles.footer_inner} data-aos="fade-in">
         <div className={styles.footer_left}>
           <Image src="/logo-white.svg" width={181} height={53} alt="moravski" />
           <Text type="caption">© 2023 — Усі права захищені.</Text>

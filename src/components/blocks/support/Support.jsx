@@ -6,7 +6,7 @@ import { Block } from '@/common/block/Block'
 const News = () => {
   return (
     <Block>
-      <div className={styles.support_card}>
+      <div className={styles.support_card} data-aos="fade-up">
         <Text type="h3" className={styles.support_card_title}>
           Виразіть свою підтримку онлайн - ваш внесок має значення для нас!
         </Text>

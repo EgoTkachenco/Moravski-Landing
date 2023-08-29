@@ -4,7 +4,7 @@ const HomePage = () => <Home />
 
 export default HomePage
 
-import { langs } from '../../locales'
+import { langs } from '@/locales'
 
 export async function getStaticPaths() {
   return {

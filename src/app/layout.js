@@ -1,6 +1,10 @@
-import Navigation from '@/components/layout/navigation/Navigation'
-import Footer from '@/components/layout/footer/Footer'
+'use client'
 import '@/styles/index.scss'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import { useLang } from '@/locales'
+import { useEffect } from 'react'
+import { MantineProvider } from '@mantine/core'
 
 export const metadata = {
   title: 'Create Next App',
@@ -8,13 +12,20 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+  const { lang } = useLang()
+
+  useEffect(() => {
+    if (process.browser) AOS.init()
+  }, [])
   return (
-    <html lang="en">
-      <body>
-        <Navigation />
-        <div className="content">{children}</div>
-        <Footer />
-      </body>
+    <html lang={lang}>
+      <MantineProvider
+        theme={{
+          colorScheme: 'light',
+        }}
+      >
+        <body>{children}</body>
+      </MantineProvider>
     </html>
   )
 }

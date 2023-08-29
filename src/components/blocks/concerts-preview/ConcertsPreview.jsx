@@ -7,7 +7,7 @@ const ConcertsPreview = () => {
   return (
     <Block outerSlot={<ConcertsCarousel />}>
       <BlockTop title="Концерти" linkText="Переглянути всі" link="/about" />
-      <Text type="h3" className={styles.title}>
+      <Text type="h3" className={styles.title} data-aos="fade-up">
         Перегляньте незабутні концерти, які вас зачарують
       </Text>
     </Block>

@@ -3,7 +3,7 @@ import styles from './contact.module.scss'
 import { Block } from '@/common/block/Block'
 import { Text, Input, Button, Checkbox } from '@/common'
 import { useForm } from '@mantine/form'
-import Link from "next/link"
+import Link from 'next/link'
 
 const Contact = () => {
   const form = useForm({
@@ -35,7 +35,7 @@ const Contact = () => {
   })
   return (
     <Block>
-      <div className={styles.contact_card}>
+      <div className={styles.contact_card} data-aos="fade-up">
         <div className={styles.contact_card_top}>
           <Text type="h3">Звʼяжіться з нами</Text>
           <Text type="h5">Ми відповімо на усі ваші питання</Text>
@@ -64,7 +64,15 @@ const Contact = () => {
           />
           <Button color="yellow">Надіслати</Button>
 
-          <Checkbox label={<>Натисніть тут, щоб підтвердити, що ви прочитали та погоджуєтеся з умовами, представленими в угоді про <Link href="/policy">Політику конфіденційності</Link>.</>} />
+          <Checkbox
+            label={
+              <>
+                Натисніть тут, щоб підтвердити, що ви прочитали та погоджуєтеся
+                з умовами, представленими в угоді про{' '}
+                <Link href="/policy">Політику конфіденційності</Link>.
+              </>
+            }
+          />
         </form>
       </div>
     </Block>

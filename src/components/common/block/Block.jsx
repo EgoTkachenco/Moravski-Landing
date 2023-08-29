@@ -12,7 +12,7 @@ export const Block = ({ children, outerSlot }) => {
 
 export const BlockTop = ({ title, linkText, link }) => {
   return (
-    <div className={styles.block_top}>
+    <div className={styles.block_top} data-aos="fade-up">
       <Text>{title}</Text>
 
       {link && (

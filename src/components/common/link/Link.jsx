@@ -2,13 +2,21 @@ import Link from 'next/link'
 import Image from 'next/image'
 import styles from './link.module.scss'
 
-const LinkText = ({ children, href, isWhite = false, className, hideIcon }) => {
+const LinkText = ({
+  children,
+  href,
+  isWhite = false,
+  className,
+  hideIcon,
+  ...props
+}) => {
   return (
     <Link
       href={href}
       className={`${styles.container} ${
         isWhite ? styles.white : styles.darrk
       } ${className}`}
+      {...props}
     >
       {children}
       {!hideIcon && (

@@ -1,26 +1,29 @@
+'use client'
 import styles from './about.module.scss'
 import { Text, Link } from '@/common'
 import Image from 'next/image'
 import { Block, BlockTop } from '@/common/block/Block'
+import { useText } from '@/locales'
 
 const About = () => {
+  const t = useText()
   return (
     <Block>
-      <BlockTop title="Про нас" />
+      <BlockTop title={t('about-us')} />
       <div className={styles.content_row}>
-        <div>
+        <div data-aos="fade-up">
           <Text type="h3" className={styles.title}>
-            Камерний хор Moravski
+            {t('chamber-choir')} {t('moravski')}
           </Text>
           <Text type="h5" className={styles.subtitle}>
             Український аматорський хоровий колектив Центру художньої та
             технічної творчості «Печерськ» м. Київ.
           </Text>
           <Link href="/about" isWhite>
-            Читати більше
+            {t('read-more')}
           </Link>
         </div>
-        <Text>
+        <Text data-aos="fade-up" data-aos-delay="150">
           Колектив створений у вересні 2017 року за ініціативи заслуженої діячки
           мистецтв України, хорової диригентки Лариси Бухонської.
           <br />
@@ -35,7 +38,7 @@ const About = () => {
           Бухонської.
         </Text>
       </div>
-      <div className={styles.content_bottom}>
+      <div className={styles.content_bottom} data-aos="fade-up">
         <Image src="/about.png" fill objectFit="contain" alt="About Moravski" />
       </div>
     </Block>
