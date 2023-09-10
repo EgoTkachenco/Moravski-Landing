@@ -1,0 +1,13 @@
+.breadcrumbs {
+  margin: 0 0 24px;
+}
+.breadcrumbs_item {
+  color: $c-white;
+  font-size: $fz-caption;
+  font-weight: 600;
+  line-height: 20px;
+
+  &:last-child {
+    color: $c-grey;
+  }
+}

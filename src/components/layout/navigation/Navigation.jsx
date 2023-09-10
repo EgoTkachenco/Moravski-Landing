@@ -5,10 +5,21 @@ import { Button } from '@/common'
 import { useIsTop } from '@/hooks'
 import { useState } from 'react'
 import { useLang, useText } from '@/locales'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
-const Navigation = ({ animation = true }) => {
+const links = [
+  { name: 'about-us', href: '/about' },
+  { name: 'concerts', href: '/concerts' },
+  { name: 'news', href: '/news' },
+  { name: 'contacts', href: '/contacts' },
+]
+
+const Navigation = () => {
+  const pathname = usePathname()
+  const isAnimation = ['/', '/en', '/ua'].includes(pathname)
+  const isTop = useIsTop(isAnimation)
   const [open, setOpen] = useState(false)
-  const isTop = useIsTop(animation)
   const toggleMenu = () => setOpen(!open)
   const { lang, setLang } = useLang()
   const toggleLang = () => setLang(lang === 'ua' ? 'en' : 'ua')
@@ -17,7 +28,9 @@ const Navigation = ({ animation = true }) => {
   return (
     <nav className={`${styles.nav} ${isTop ? '' : styles.nav_white}`}>
       <div className={styles.nav_inner}>
-        <Image src="/logo.svg" width={165} height={48} alt="Moravski" />
+        <Link href={lang === 'en' ? '/' + lang : '/'}>
+          <Image src="/logo.svg" width={165} height={48} alt="Moravski" />
+        </Link>
 
         <div
           className={`${styles.nav_content} ${
@@ -25,10 +38,14 @@ const Navigation = ({ animation = true }) => {
           }`}
         >
           <ul className={styles.nav_links}>
-            <li className={styles.nav_link}>{t('about-us')}</li>
-            <li className={styles.nav_link}>{t('concerts')}</li>
-            <li className={styles.nav_link}>{t('news')}</li>
-            <li className={styles.nav_link}>{t('contacts')}</li>
+            {links.map((link) => (
+              <Link
+                href={(lang === 'en' ? '/' + lang : '') + link.href}
+                key={link.name}
+              >
+                <li className={styles.nav_link}>{t(link.name)}</li>
+              </Link>
+            ))}
           </ul>
 
           <div className={styles.nav_right}>

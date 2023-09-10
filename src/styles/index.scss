@@ -28,3 +28,24 @@ a {
   text-decoration: none;
   color: unset;
 }
+
+button.mantine-Pagination-control {
+  background: transparent;
+  color: $c-white;
+  border: unset;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+button.mantine-Pagination-control:hover {
+  color: $c-dark;
+}
+button.mantine-Pagination-control[data-active] {
+  background: $c-white;
+  color: $c-dark;
+}
+button.mantine-Pagination-control[data-active]:not([data-disabled]):hover {
+  background: $c-white;
+  color: $c-dark;
+}

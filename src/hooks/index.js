@@ -5,7 +5,10 @@ export const useIsTop = (allow) => {
   const [isTop, setIsTop] = useState(!!allow)
 
   useEffect(() => {
-    if (!allow || typeof window === 'undefined') return
+    if (!allow || typeof window === 'undefined') {
+      setIsTop(false)
+      return
+    }
 
     const onscroll = () => setIsTop(window.scrollY === 0)
     document.addEventListener('scroll', onscroll)
@@ -18,23 +21,23 @@ export const useIsTop = (allow) => {
   return isTop
 }
 
-export const useIntervalCount = (count, time = 3000) => {
-  const intervalTime = 75
-  const [value, setValue] = useState(0)
-  useEffect(() => {
-    const step = count / (time / intervalTime)
-    const interval = setInterval(() => {
-      setValue((value) =>
-        value < count
-          ? Math.ceil(value + step)
-          : clearInterval(interval) || count
-      )
-    }, intervalTime)
+// export const useIntervalCount = (count, time = 3000) => {
+//   const intervalTime = 75
+//   const [value, setValue] = useState(0)
+//   useEffect(() => {
+//     const step = count / (time / intervalTime)
+//     const interval = setInterval(() => {
+//       setValue((value) =>
+//         value < count
+//           ? Math.ceil(value + step)
+//           : clearInterval(interval) || count
+//       )
+//     }, intervalTime)
 
-    return () => {
-      clearInterval(interval)
-    }
-  }, [count])
+//     return () => {
+//       clearInterval(interval)
+//     }
+//   }, [count])
 
-  return value
-}
+//   return value
+// }

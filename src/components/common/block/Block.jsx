@@ -1,10 +1,13 @@
 import styles from './block.module.scss'
-import { Link, Text } from '@/common'
+import Link from '../link/Link'
+import Text from '../text/Text'
 
-export const Block = ({ children, outerSlot }) => {
+export const Block = ({ children, outerSlot, innerClassName = '' }) => {
   return (
     <div className={styles.block}>
-      <div className={styles.block_inner}>{children}</div>
+      <div className={`${styles.block_inner} ${innerClassName}`}>
+        {children}
+      </div>
       {outerSlot}
     </div>
   )

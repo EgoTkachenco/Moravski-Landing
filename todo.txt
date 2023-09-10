@@ -1,0 +1,20 @@
+Pages
+	+ Home
+	+ 404
+	+ Policy
+	- News details
+	+ News
+	- Support 
+	- Concerts
+	- Concert Details
+	+ Videos
+	- Photos
+	+ Contacts
+	- About
+		1 block about chamber history
+
+	
+------
+- Refactor table with pagination to 1 component
+- Add block about chamber history to about page
+

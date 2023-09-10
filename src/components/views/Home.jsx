@@ -4,7 +4,7 @@ import AboutGroupBlock from '@/components/blocks/about-group/AboutGroup'
 import ConcertsPreviewBlock from '@/components/blocks/concerts-preview/ConcertsPreview'
 import SupportBlock from '@/components/blocks/support/Support'
 import NewsPreviewBlock from '@/components/blocks/news-preview/NewsPreview'
-import ContactBlock from '@/components/blocks/contact/Contact'
+import ContactFormBlock from '@/components/blocks/contact-form/ContactForm'
 
 const Home = () => {
   return (
@@ -15,7 +15,7 @@ const Home = () => {
       <ConcertsPreviewBlock />
       <SupportBlock />
       <NewsPreviewBlock />
-      <ContactBlock />
+      <ContactFormBlock />
     </>
   )
 }

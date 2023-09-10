@@ -1,0 +1,45 @@
+div.container {
+  padding: 160px 0 0;
+}
+
+.cards_container {
+  display: flex;
+  gap: 24px;
+}
+
+.card {
+  background-color: #e2e2e2;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  color: $c-dark;
+}
+
+.card_title {
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.card_contacts {
+  margin-top: 16px;
+  padding-left: 16px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 9px;
+    background: $c-dark;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+}
+
+.card_contacts_title {
+  font-weight: 600;
+}

@@ -1,11 +1,11 @@
 'use client'
-import styles from './contact.module.scss'
+import styles from './contact-form.module.scss'
 import { Block } from '@/common/block/Block'
 import { Text, Input, Button, Checkbox } from '@/common'
 import { useForm } from '@mantine/form'
 import Link from 'next/link'
 
-const Contact = () => {
+const ContactForm = () => {
   const form = useForm({
     initialValues: {
       name: '',
@@ -79,4 +79,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
+export default ContactForm

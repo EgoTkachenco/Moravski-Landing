@@ -1,0 +1,23 @@
+div.container {
+  padding: 160px 0 40px;
+}
+
+.title {
+  margin-bottom: 50px;
+}
+
+.list {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+
+  & > * {
+    width: calc((100% - 80px) / 3);
+  }
+}
+
+.pagination {
+  margin: 64px 0 0;
+  display: flex;
+  justify-content: center;
+}

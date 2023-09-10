@@ -11,12 +11,14 @@ const News = () => {
           Виразіть свою підтримку онлайн - ваш внесок має значення для нас!
         </Text>
         <div className={styles.support_card_buttons}>
-          <Button color="yellow">Підтримайте нас</Button>
-          <Button color="red">
+          <Button color="yellow" data-aos="fade-up" data-aos-delay="150">
+            Підтримайте нас
+          </Button>
+          <Button color="red" data-aos="fade-up" data-aos-delay="300">
             <Image src="/icons/patreon.svg" width={15} height={14} alt="UA" />
             Patreon
           </Button>
-          <Button>
+          <Button data-aos="fade-up" data-aos-delay="450">
             <Image src="/icons/ua.svg" width={20} height={20} alt="UA" />
             Support Ukraine
           </Button>
