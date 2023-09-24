@@ -1,10 +1,12 @@
-import ContactsBlock from '@/components/blocks/contacts/Contacts'
-import ContactFormBlock from '@/components/blocks/contact-form/ContactForm'
+'use client'
+import Contact, {
+  ContactFormBlock,
+} from '@/components/blocks/contacts/Contacts'
 
 const Contacts = () => {
   return (
     <>
-      <ContactsBlock />
+      <Contact />
       <ContactFormBlock />
     </>
   )

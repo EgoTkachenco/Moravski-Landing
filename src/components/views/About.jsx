@@ -1,13 +1,26 @@
-import AboutDetailsBlock from '@/components/blocks/about-details/AboutDetails'
-import AboutGroupBlock from '@/components/blocks/about-group/AboutGroup'
-import SupportBlock from '@/components/blocks/support/Support'
+import { SupportCardBlock } from '@/components/blocks/support/Support'
+import { PageBlock, Block } from '@/common'
+import {
+  AboutChoir,
+  AboutGroup,
+  AboutStatisticBlock,
+  AboutOlenaBlock,
+  AboutHistoryBlock,
+} from '@/components/blocks/about/About'
 
 const About = () => {
   return (
     <>
-      <AboutDetailsBlock />
-      <AboutGroupBlock />
-      <SupportBlock />
+      <PageBlock breadcrumbs={['home', 'about-us']}>
+        <AboutChoir image="/about2.png" />
+      </PageBlock>
+      <Block>
+        <AboutGroup />
+      </Block>
+      <AboutStatisticBlock />
+      <AboutOlenaBlock />
+      <AboutHistoryBlock />
+      <SupportCardBlock />
     </>
   )
 }

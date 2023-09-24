@@ -1,5 +1,8 @@
 .breadcrumbs {
   margin: 0 0 24px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
 .breadcrumbs_item {
   color: $c-white;

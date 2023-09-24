@@ -1,16 +1,19 @@
+'use client'
 import styles from './404.module.scss'
 import { Button } from '@/common'
 import Link from 'next/link'
-import Image from 'next/image'
+import routes from '@/utils/routes'
+import { useText } from '@/locales'
 
 const NotFound = () => {
+  const t = useText()
   return (
     <header className={styles.container}>
       <div className={styles.content}>
-        <Image src="/404.svg" alt="404" width={696} height={300} />
-        <h1 className={styles.title}>Вибачте, сторінку не знайдено</h1>
-        <Link href="/">
-          <Button color="yellow">На головну</Button>
+        <img src="/404.svg" alt="404" className={styles.illustration} />
+        <h1 className={styles.title}>{t('404_title')}</h1>
+        <Link href={routes.home}>
+          <Button color="yellow">{t('404_redirect')}</Button>
         </Link>
       </div>
     </header>

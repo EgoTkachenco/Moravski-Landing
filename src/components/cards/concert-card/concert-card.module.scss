@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  gap: 150px;
+  align-items: stretch;
+  padding-bottom: 40px;
+  border-bottom: 1px solid $c-grey;
+
+  @media (max-width: $m-md) {
+    flex-direction: column-reverse;
+    gap: 32px;
+  }
+}
+.container_last {
+  border-bottom: none;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.content_top {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.illustration {
+  max-width: 530px;
+  object-fit: cover;
+  @media (max-width: $m-md) {
+    width: 100%;
+    margin: auto;
+  }
+}
+
+.title {
+  font-size: $fz-h5;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.date {
+  font-size: $fz-text;
+  color: $c-grey;
+  font-weight: 600;
+}
+
+.description {
+  white-space: break-spaces;
+}

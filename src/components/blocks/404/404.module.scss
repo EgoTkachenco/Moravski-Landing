@@ -22,4 +22,15 @@
   font-weight: 600;
   line-height: 34px;
   margin: 32px 0;
+  text-align: center;
+}
+
+.illustration {
+  width: 696px;
+  height: 300px;
+
+  @media (max-width: $m-md) {
+    width: calc(100% - 32px);
+    margin: 16px;
+  }
 }

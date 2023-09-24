@@ -23,6 +23,11 @@
   align-items: center;
 }
 
+.nav_logo {
+  width: 165px;
+  height: 48px;
+}
+
 .nav_content {
   margin-left: 70px;
   flex-grow: 1;
@@ -66,6 +71,7 @@
   gap: 5px;
   cursor: pointer;
   font-weight: 500;
+  @include bottom-line-effect;
 }
 
 .nav_right {

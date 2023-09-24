@@ -2,9 +2,19 @@
   display: flex;
   gap: 100px;
 
-  & > :first-child {
-    width: 450px;
-    min-width: 450px;
+  @media (max-width: $m-md) {
+    gap: 32px;
+    flex-direction: column;
+  }
+}
+
+.f_column {
+  width: 450px;
+  min-width: 450px;
+
+  @media (max-width: $m-md) {
+    width: 100%;
+    min-width: unset;
   }
 }
 
@@ -19,5 +29,77 @@
 .content_bottom {
   position: relative;
   height: 550px;
+  width: 100%;
   margin-top: 50px;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.illustration_group {
+  width: 594px;
+  height: 383px;
+  object-fit: cover;
+
+  @media (max-width: $m-md) {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.stat_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: $m-md) {
+    flex-direction: column;
+  }
+}
+.stat_item {
+  width: 246px;
+  gap: 10px;
+  text-align: center;
+  border-right: 1px solid #e2e2e2;
+
+  &:last-child {
+    border-right: none;
+  }
+
+  @media (max-width: $m-md) {
+    gap: 16px;
+    border-right: none;
+  }
+}
+.stat_item_count {
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 72px;
+  letter-spacing: -1px;
+}
+
+.illustration_olena {
+  min-width: 600px;
+  max-height: 602px;
+  object-fit: cover;
+  object-position: top;
+
+  @media (max-width: $m-md) {
+    min-width: unset;
+    width: 100%;
+  }
+}
+
+.text_container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  flex-grow: 1;
+}
+
+.text_container_bottom {
+  margin-top: auto;
 }

@@ -1,8 +1,23 @@
-import Link from 'next/link'
-import Image from 'next/image'
+'use client'
 import styles from './link.module.scss'
+import NextLink from 'next/link'
+import { useLang } from '@/locales'
 
-const LinkText = ({
+export const Link = ({ children, href, ...props }) => {
+  const { lang } = useLang()
+  const external = props.external
+  delete props.external
+  return (
+    <NextLink
+      href={(!external && lang === 'en' ? '/' + lang : '') + href}
+      {...props}
+    >
+      {children}
+    </NextLink>
+  )
+}
+
+export const LinkWithIcon = ({
   children,
   href,
   isWhite = false,
@@ -14,13 +29,13 @@ const LinkText = ({
     <Link
       href={href}
       className={`${styles.container} ${
-        isWhite ? styles.white : styles.darrk
+        isWhite ? styles.white : styles.dark
       } ${className}`}
       {...props}
     >
       {children}
       {!hideIcon && (
-        <Image
+        <img
           src={
             isWhite ? '/icons/link-arrow-white.svg' : '/icons/link-arrow.svg'
           }
@@ -32,5 +47,3 @@ const LinkText = ({
     </Link>
   )
 }
-
-export default LinkText

@@ -1,6 +1,7 @@
 import styles from './block.module.scss'
-import Link from '../link/Link'
+import { LinkWithIcon } from '../link/Link'
 import Text from '../text/Text'
+import Breadcrumbs from '../breadcrumbs/Breadcrumbs'
 
 export const Block = ({ children, outerSlot, innerClassName = '' }) => {
   return (
@@ -19,10 +20,22 @@ export const BlockTop = ({ title, linkText, link }) => {
       <Text>{title}</Text>
 
       {link && (
-        <Link href={link} isWhite>
+        <LinkWithIcon href={link} isWhite>
           {linkText}
-        </Link>
+        </LinkWithIcon>
       )}
     </div>
+  )
+}
+
+export const PageBlock = ({ breadcrumbs, title, children }) => {
+  return (
+    <Block innerClassName={styles.page_block}>
+      {breadcrumbs && <Breadcrumbs items={breadcrumbs} />}
+      <Text type="h3" className={styles.page_block_title} data-aos="fade-up">
+        {title}
+      </Text>
+      {children}
+    </Block>
   )
 }

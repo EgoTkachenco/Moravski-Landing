@@ -5,10 +5,11 @@ import 'swiper/css'
 import 'swiper/css/parallax'
 import 'swiper/css/effect-coverflow'
 import styles from './concerts-preview.module.scss'
+import { Link } from '@/common'
+import routes from '@/utils/routes'
 
-import Image from 'next/image'
-
-const ConcertsCarousel = () => {
+const ConcertsCarousel = ({ concerts = [] }) => {
+  console.log(concerts)
   return (
     <Swiper
       loop={true}
@@ -45,11 +46,13 @@ const ConcertsCarousel = () => {
       data-aos="fade-up"
       // onSwiper={(swiper) => console.log(swiper)}
     >
-      {slides.map((slide, i) => (
+      {concerts.map((slide, i) => (
         <SwiperSlide key={i}>
-          <div className={styles.slide_image}>
-            <Image src={slide} fill alt="slide" />
-          </div>
+          <Link href={routes.concerts + '/' + slide.id}>
+            <div className={styles.slide_image}>
+              <img src={slide.image} alt={slide.title} />
+            </div>
+          </Link>
         </SwiperSlide>
       ))}
     </Swiper>
@@ -57,12 +60,3 @@ const ConcertsCarousel = () => {
 }
 
 export default ConcertsCarousel
-
-const slides = [
-  '/concerts/concert2.jpg',
-  '/concerts/concert1.png',
-  '/concerts/concert1.png',
-  '/concerts/concert2.jpg',
-  '/concerts/concert1.png',
-  '/concerts/concert1.png',
-]

@@ -10,6 +10,12 @@
   display: flex;
   gap: 64px;
   justify-content: space-between;
+
+  @media (max-width: $m-md) {
+    flex-direction: column;
+    padding: 48px 24px;
+    gap: 48px;
+  }
 }
 
 .footer_left {
@@ -17,6 +23,11 @@
   flex-direction: column;
   gap: 16px;
   color: $c-grey;
+}
+
+.footer_logo {
+  width: 181px;
+  height: 53px;
 }
 
 .footer_payment_methods {
@@ -29,12 +40,26 @@
   display: flex;
   gap: 80px;
   color: $c-white;
+
+  @media (max-width: $m-md) {
+    flex-wrap: wrap;
+    gap: 32px;
+  }
 }
 
 .links_column {
   display: flex;
   flex-direction: column;
   gap: 6px;
+
+  @media (max-width: $m-md) {
+    flex-grow: 1;
+    width: calc(50% - 16px);
+
+    &:last-child {
+      width: 100%;
+    }
+  }
 }
 .links_title {
   gap: 6px;
@@ -51,4 +76,8 @@
   margin-top: 12px;
   display: flex;
   gap: 10px;
+}
+.links_social_icon {
+  width: 26px;
+  height: 27px;
 }

@@ -1,14 +1,22 @@
+'use client'
 import styles from './concerts-preview.module.scss'
 import { Text } from '@/common'
 import { Block, BlockTop } from '@/common/block/Block'
 import ConcertsCarousel from './ConcertsCarousel'
+import routes from '@/utils/routes'
+import { useText } from '@/locales'
 
-const ConcertsPreview = () => {
+const ConcertsPreview = ({ concerts }) => {
+  const t = useText()
   return (
-    <Block outerSlot={<ConcertsCarousel />}>
-      <BlockTop title="Концерти" linkText="Переглянути всі" link="/about" />
+    <Block outerSlot={<ConcertsCarousel concerts={concerts} />}>
+      <BlockTop
+        title={t('concerts')}
+        linkText={t('see-all')}
+        link={routes.concerts}
+      />
       <Text type="h3" className={styles.title} data-aos="fade-up">
-        Перегляньте незабутні концерти, які вас зачарують
+        {t('see-concerts-title')}
       </Text>
     </Block>
   )

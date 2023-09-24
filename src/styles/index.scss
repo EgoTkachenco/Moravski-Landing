@@ -49,3 +49,10 @@ button.mantine-Pagination-control[data-active]:not([data-disabled]):hover {
   background: $c-white;
   color: $c-dark;
 }
+
+.content {
+  background: $c-dark;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

@@ -11,12 +11,19 @@
 .card_illustration {
   position: relative;
   height: 252px;
+  object-fit: cover;
 }
 
 .card_top {
   margin: 20px 0 40px;
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: $m-md) {
+    flex-direction: column;
+    gap: 8px;
+    margin: 16px 0 24px;
+  }
 }
 
 .card_title {
@@ -30,6 +37,11 @@
   color: $c-grey;
   width: 90px;
   text-align: right;
+
+  @media (max-width: $m-md) {
+    width: auto;
+    text-align: left;
+  }
 }
 
 .card_description {

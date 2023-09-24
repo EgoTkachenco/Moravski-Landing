@@ -1,7 +1,8 @@
 'use client'
 import styles from './banner.module.scss'
-import { Button, Link } from '@/common'
+import { Button, LinkWithIcon } from '@/common'
 import { useText } from '@/locales'
+import routes from '@/utils/routes'
 
 const Banner = () => {
   const t = useText()
@@ -15,17 +16,17 @@ const Banner = () => {
         <h1 className={styles.title} data-aos="fade-up" data-aos-delay="150">
           {t('moravski')}
         </h1>
-        <Button color="dark" data-aos="fade-up" data-aos-delay="300">
-          {t('join-us')}
-        </Button>
-        <Link
+        <div data-aos="fade-up" data-aos-delay="300">
+          <Button color="dark">{t('join-us')}</Button>
+        </div>
+        <LinkWithIcon
           className={styles.bottom}
-          href="/"
+          href={routes['support-us']}
           data-aos="fade-up"
           data-aos-delay="450"
         >
           {t('support-us')}
-        </Link>
+        </LinkWithIcon>
       </div>
     </header>
   )

@@ -12,6 +12,14 @@
   height: 44px;
   cursor: pointer;
   text-decoration: none;
+  transition: all 0.3s;
+
+  &:hover {
+    transform: scale(1.025);
+  }
+  &:active {
+    transform: scale(0.95);
+  }
 }
 .btn-yellow {
   background: $c-yellow;
@@ -21,4 +29,8 @@
 }
 .btn-red {
   background: $c-red;
+}
+.btn-white {
+  background: $c-white;
+  color: $c-dark;
 }

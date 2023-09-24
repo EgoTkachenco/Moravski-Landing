@@ -1,0 +1,14 @@
+{
+  "contact_phone": "+380 68 123 45 67",
+  "contact_mail": "moravski.choir@gmail.com",
+  "social_accounts": {
+    "youtube": "https://youtube.com",
+    "facebook": "https://facebook.com",
+    "tiktok": "https://tiktok.com",
+    "instagram": "https://instagram.com"
+  },
+  "support": {
+    "patreon": "https://patreon.com",
+    "support_ukraine": "/"
+  }
+}

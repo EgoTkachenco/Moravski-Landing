@@ -1,7 +1,6 @@
 import styles from './videos.module.scss'
 import { Text, Breadcrumbs, Pagination } from '@/common'
 import { Block } from '@/common/block/Block'
-import Image from 'next/image'
 
 let videos = [
   {
@@ -48,7 +47,7 @@ const Videos = () => {
       <div className={styles.list}>
         {videos.map((video, i) => (
           <div className={styles.list_item} key={i}>
-            <Image src={video.image} fill />
+            <img src={video.image} />
           </div>
         ))}
       </div>

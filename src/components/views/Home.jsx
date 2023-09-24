@@ -1,20 +1,26 @@
 import BannerBlock from '@/components/blocks/banner/Banner'
-import AboutBlock from '@/components/blocks/about/About'
-import AboutGroupBlock from '@/components/blocks/about-group/AboutGroup'
+import {
+  AboutChoirBlock,
+  AboutGroupBlock,
+  AboutStatisticBlock,
+  AboutOlenaBlock,
+} from '@/components/blocks/about/About'
 import ConcertsPreviewBlock from '@/components/blocks/concerts-preview/ConcertsPreview'
-import SupportBlock from '@/components/blocks/support/Support'
-import NewsPreviewBlock from '@/components/blocks/news-preview/NewsPreview'
-import ContactFormBlock from '@/components/blocks/contact-form/ContactForm'
+import { SupportCardBlock } from '@/components/blocks/support/Support'
+import { NewsPreviewBlock } from '@/components/blocks/news/News'
+import { ContactFormBlock } from '@/components/blocks/contacts/Contacts'
 
-const Home = () => {
+const Home = ({ news, concerts }) => {
   return (
     <>
       <BannerBlock />
-      <AboutBlock />
+      <AboutChoirBlock />
       <AboutGroupBlock />
-      <ConcertsPreviewBlock />
-      <SupportBlock />
-      <NewsPreviewBlock />
+      <AboutStatisticBlock />
+      <AboutOlenaBlock />
+      <ConcertsPreviewBlock concerts={concerts} />
+      <SupportCardBlock />
+      <NewsPreviewBlock news={news} />
       <ContactFormBlock />
     </>
   )

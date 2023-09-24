@@ -1,19 +1,13 @@
 'use client'
-import Image from 'next/image'
 import styles from './navigation.module.scss'
-import { Button } from '@/common'
+import { Button, Link } from '@/common'
 import { useIsTop } from '@/hooks'
 import { useState } from 'react'
 import { useLang, useText } from '@/locales'
-import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import routes from '@/utils/routes'
 
-const links = [
-  { name: 'about-us', href: '/about' },
-  { name: 'concerts', href: '/concerts' },
-  { name: 'news', href: '/news' },
-  { name: 'contacts', href: '/contacts' },
-]
+const links = ['about-us', 'concerts', 'news', 'contacts']
 
 const Navigation = () => {
   const pathname = usePathname()
@@ -28,8 +22,8 @@ const Navigation = () => {
   return (
     <nav className={`${styles.nav} ${isTop ? '' : styles.nav_white}`}>
       <div className={styles.nav_inner}>
-        <Link href={lang === 'en' ? '/' + lang : '/'}>
-          <Image src="/logo.svg" width={165} height={48} alt="Moravski" />
+        <Link href={routes.home}>
+          <img src="/logo.svg" className={styles.nav_logo} alt="Moravski" />
         </Link>
 
         <div
@@ -39,11 +33,8 @@ const Navigation = () => {
         >
           <ul className={styles.nav_links}>
             {links.map((link) => (
-              <Link
-                href={(lang === 'en' ? '/' + lang : '') + link.href}
-                key={link.name}
-              >
-                <li className={styles.nav_link}>{t(link.name)}</li>
+              <Link href={routes[link]} key={link}>
+                <li className={styles.nav_link}>{t(link)}</li>
               </Link>
             ))}
           </ul>
@@ -53,7 +44,9 @@ const Navigation = () => {
               {lang}
             </div>
 
-            <Button color="yellow">{t('support-us')}</Button>
+            <Link href={routes['support-us']}>
+              <Button color="yellow">{t('support-us')}</Button>
+            </Link>
           </div>
         </div>
 

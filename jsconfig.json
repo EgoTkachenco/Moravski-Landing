@@ -7,6 +7,8 @@
       "@/common/*": ["./src/components/common/*"],
       "@/styles/*": ["./src/styles/*"],
       "@/hooks/*": ["./src/hooks/*"],
+      "@/utils/*": ["./src/utils/*"],
+      "@/config/*": ["./src/config/*"],
       "@/locales": ["./src/locales/index.js"]
     }
   }

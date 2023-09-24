@@ -18,6 +18,7 @@
 .text {
   font-size: $fz-text;
   line-height: 150%;
+  white-space: break-spaces;
 }
 .caption {
   font-size: $fz-caption;

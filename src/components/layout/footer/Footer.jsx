@@ -1,26 +1,62 @@
+'use client'
 import { Text, Link } from '@/common'
-import Image from 'next/image'
 import styles from './footer.module.scss'
+import CONFIG from '@/config/config'
+import routes from '@/utils/routes'
+import { useText } from '@/locales'
 
 const Footer = () => {
+  const t = useText()
+  const links = [
+    {
+      title: t('about-us'),
+      links: [
+        { name: t('choir-history'), link: routes['about-us'] + '#history' },
+        { name: t('news'), link: routes.news },
+        { name: t('group'), link: routes['about-us'] },
+        { name: t('director'), link: routes['about-us'] + '#olena' },
+        { name: t('achievements'), link: routes['about-us'] + '#achievements' },
+      ],
+    },
+    {
+      title: t('appearance'),
+      links: [
+        { name: t('gallery'), link: routes.gallery },
+        { name: t('video'), link: routes.videos },
+        { name: t('concerts'), link: routes.concerts },
+      ],
+    },
+    {
+      title: t('information'),
+      links: [
+        { name: t('support-us'), link: routes['support-us'] },
+        { name: t('contacts'), link: routes.contacts },
+      ],
+    },
+  ]
+
   return (
     <footer className={styles.footer}>
       <div className={styles.footer_inner} data-aos="fade-in">
         <div className={styles.footer_left}>
-          <Image src="/logo-white.svg" width={181} height={53} alt="moravski" />
-          <Text type="caption">© 2023 — Усі права захищені.</Text>
-          <Link href="/policy" hideIcon>
-            <Text type="caption">Політика конфіденціальності</Text>
+          <img
+            src="/logo-white.svg"
+            className={styles.footer_logo}
+            alt="moravski"
+          />
+          <Text type="caption">© 2023 — {t('all-rights-reserved')}.</Text>
+          <Link href={routes.policy}>
+            <Text type="caption">{t('policy')}</Text>
           </Link>
           <div className={styles.footer_payment_methods}>
-            <Image
+            <img
               src="/mastercard.svg"
-              width={50}
-              height={50}
+              width="50px"
+              height="50px"
               alt="mastercard"
             />
-            <Image src="/visa.svg" width={50} height={50} alt="visa" />
-            <Image src="/liqpay.svg" width={72} height={15} alt="liqpay" />
+            <img src="/visa.svg" width="50px" height="50px" alt="visa" />
+            <img src="/liqpay.svg" width="72px" height="15px" alt="liqpay" />
           </div>
         </div>
 
@@ -37,34 +73,38 @@ const Footer = () => {
           ))}
 
           <div className={styles.links_column}>
-            <div className={styles.links_title}>Контакти</div>
-            <div className={styles.links_link}>+380 68 123 45 67</div>
-            <div className={styles.links_link}>moravski.choir@gmail.com</div>
+            <div className={styles.links_title}>{t('contacts')}</div>
+            <div className={styles.links_link}>{CONFIG.contact_phone}</div>
+            <div className={styles.links_link}>{CONFIG.contact_mail}</div>
             <div className={styles.links_social}>
-              <Image
-                src="/icons/youtube.svg"
-                width={26}
-                height={27}
-                alt="youtube"
-              />
-              <Image
-                src="/icons/facebook.svg"
-                width={26}
-                height={27}
-                alt="facebook"
-              />
-              <Image
-                src="/icons/instagram.svg"
-                width={26}
-                height={27}
-                alt="instagram"
-              />
-              <Image
-                src="/icons/tiktok.svg"
-                width={26}
-                height={27}
-                alt="tiktok"
-              />
+              <Link external href={CONFIG.social_accounts.youtube}>
+                <img
+                  src="/icons/youtube.svg"
+                  className={styles.links_social_icon}
+                  alt="youtube"
+                />
+              </Link>
+              <Link external href={CONFIG.social_accounts.facebook}>
+                <img
+                  src="/icons/facebook.svg"
+                  className={styles.links_social_icon}
+                  alt="facebook"
+                />
+              </Link>
+              <Link external href={CONFIG.social_accounts.instagram}>
+                <img
+                  src="/icons/instagram.svg"
+                  className={styles.links_social_icon}
+                  alt="instagram"
+                />
+              </Link>
+              <Link external href={CONFIG.social_accounts.tiktok}>
+                <img
+                  src="/icons/tiktok.svg"
+                  className={styles.links_social_icon}
+                  alt="tiktok"
+                />
+              </Link>
             </div>
           </div>
         </div>
@@ -74,34 +114,3 @@ const Footer = () => {
 }
 
 export default Footer
-
-const links = [
-  {
-    title: 'Про нас',
-    links: [
-      { name: 'Історія хору', link: '/' },
-      { name: 'Новини', link: '/' },
-      { name: 'Колектив', link: '/' },
-      { name: 'Художній керівник', link: '/' },
-      { name: 'Досягнення', link: '/' },
-    ],
-  },
-  {
-    title: 'Виступи',
-    links: [
-      { name: 'Галерея', link: '/' },
-      { name: 'Відео', link: '/' },
-      { name: 'Концерти', link: '/' },
-      { name: 'Записи', link: '/' },
-    ],
-  },
-  {
-    title: 'Інформація',
-    links: [
-      { name: 'Підтримати нас', link: '/' },
-      { name: 'Контакти', link: '/' },
-      { name: 'Оферта', link: '/' },
-      { name: 'Доставка і оплата', link: '/' },
-    ],
-  },
-]

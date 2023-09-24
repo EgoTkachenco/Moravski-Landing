@@ -1,55 +1,35 @@
 'use client'
-import styles from './styles.module.scss'
-import { List, Block } from '@/common'
-import Image from 'next/image'
+import { List, PageBlock } from '@/common'
+import { useText } from '@/locales'
 
-let videos = [
-  {
-    image: '/news/news1.png',
-    title: 'Участь у різдвяному Гала-концерті "United in Song "',
-  },
-  {
-    image: '/news/news1.png',
-    title: 'Участь у різдвяному Гала-концерті "United in Song "',
-  },
-  {
-    image: '/news/news1.png',
-    title: 'Участь у різдвяному Гала-концерті "United in Song "',
-  },
-  {
-    image: '/news/news1.png',
-    title: 'Участь у різдвяному Гала-концерті "United in Song "',
-  },
-  {
-    image: '/news/news1.png',
-    title: 'Участь у різдвяному Гала-концерті "United in Song "',
-  },
-  {
-    image: '/news/news1.png',
-    title: 'Участь у різдвяному Гала-концерті "United in Song "',
-  },
-]
-videos = new Array(4).fill(videos).reduce((acc, el) => [...acc, ...el])
-
-const Videos = () => {
+const Videos = ({ videos }) => {
+  const t = useText()
   return (
-    <Block innerClassName={styles.list_page_container}>
+    <PageBlock title={t('videos')} breadcrumbs={['home', 'videos']}>
       <List
-        breadcrumbs={[
-          { title: 'home', href: '/' },
-          { title: 'videos', href: '/videos' },
-        ]}
         data={videos}
         page={1}
-        total={10}
+        total={1}
         renderItem={(item) => (
-          <div style={{ minHeight: '252px', position: 'relative' }}>
-            <Image src={item.image} fill />
-          </div>
+          <ImagePreview src={item.image} title={item.title} />
         )}
-      ></List>
-    </Block>
+      />
+    </PageBlock>
   )
 }
 
 export default Videos
+
+const ImagePreview = ({ src, title }) => {
+  return (
+    <img
+      src={src}
+      alt={title}
+      style={{
+        objectFit: 'cover',
+        width: '100%',
+        height: '100%',
+      }}
+    />
+  )
+}

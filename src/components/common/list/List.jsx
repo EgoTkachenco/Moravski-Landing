@@ -1,30 +1,27 @@
 'use client'
 import styles from './list.module.scss'
-import Text from '../text/Text'
-import Breadcrumbs from '../breadcrumbs/Breadcrumbs'
 import Pagination from '../pagination/Pagination'
 
 const List = ({
-  breadcrumbs,
-  title,
-  data,
+  data = [],
   page,
   total,
+  itemsPerRow = 3,
   onPageChange = () => {},
   renderItem = (item, i) => <div>{i}</div>,
 }) => {
+  const n = itemsPerRow
   return (
     <>
-      {breadcrumbs && <Breadcrumbs items={breadcrumbs} />}
-      {title && (
-        <Text type="h3" className={styles.title} data-aos="fade-up">
-          {title}
-        </Text>
-      )}
-
       <div className={styles.list}>
         {data.map((item, i) => (
-          <div className={styles.list_item} key={i}>
+          <div
+            className={styles.list_item}
+            style={{ width: `calc((100% - (40px * ${n - 1})) / ${n})` }}
+            key={i}
+            data-aos="fade-up"
+            data-aos-delay={100 * ((i % n) + 1)}
+          >
             {renderItem(item, i)}
           </div>
         ))}
