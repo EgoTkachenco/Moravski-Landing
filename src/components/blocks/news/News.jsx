@@ -31,7 +31,7 @@ export const NewsPreviewBlock = ({ news = [] }) => {
             title={news.title}
             description={news.description}
             date={news.date}
-            link={routes.news + news.id}
+            link={routes.news + '/' + news.id}
             data-aos="fade-up"
             data-aos-delay={100 * i}
           />

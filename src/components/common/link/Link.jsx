@@ -6,6 +6,7 @@ import { useLang } from '@/locales'
 export const Link = ({ children, href, ...props }) => {
   const { lang } = useLang()
   const external = props.external
+  if (external) props.target = '_blank'
   delete props.external
   return (
     <NextLink

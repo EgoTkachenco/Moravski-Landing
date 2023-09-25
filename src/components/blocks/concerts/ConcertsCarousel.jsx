@@ -46,7 +46,7 @@ const ConcertsCarousel = ({ concerts = [] }) => {
     >
       {concerts.map((slide, i) => (
         <SwiperSlide key={i}>
-          <Link href={routes.concerts + '/' + slide.id}>
+          <Link href={routes.concerts + '/' + slide.slug}>
             <div className={styles.slide_image}>
               <img src={slide.image} alt={slide.title} />
             </div>
