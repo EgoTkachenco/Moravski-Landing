@@ -124,10 +124,15 @@ const SupportCard = () => {
             {t('support-us')}
           </Button>
         </Link>
-        <Link href={CONFIG.support.patreon} external>
-          <Button color="red" data-aos="fade-up" data-aos-delay="300">
-            <img src="/icons/patreon.svg" width="15px" height="14px" alt="UA" />
-            Patreon
+        <Link href={CONFIG.support.buy_me_a_coffee} external>
+          <Button color="white" data-aos="fade-up" data-aos-delay="300">
+            <img
+              src="/icons/buymeacoffee.svg"
+              width="15px"
+              height="14px"
+              alt="UA"
+            />
+            Buy Me a Coffee
           </Button>
         </Link>
         <Link href={CONFIG.support.support_ukraine} external>
