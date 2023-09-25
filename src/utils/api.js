@@ -3,7 +3,6 @@ const base_url = 'https://admin.moravski.com.ua/api'
 const no_data = { current_page: 1, data: [], last_page: 1 }
 
 export const getConcerts = (page, isEn = false) => {
-  console.log('GET CONCERTS END ', isEn)
   return fetch(base_url + (isEn ? '/en' : '') + '/concerts')
     .then((res) => res.json())
     .catch((error) => {
