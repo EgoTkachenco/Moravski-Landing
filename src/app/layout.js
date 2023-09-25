@@ -11,6 +11,7 @@ import { Montserrat } from 'next/font/google'
 const montserrat = Montserrat({
   weight: ['400', '500', '600'],
   style: ['normal'],
+  subsets: ['latin', 'cyrillic'],
   display: 'swap',
 })
 
@@ -44,18 +45,13 @@ export default function RootLayout({ children }) {
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
-        <style jsx global>{`
-          html {
-            font-family: ${montserrat.style.fontFamily};
-          }
-        `}</style>
       </Head>
       <MantineProvider
         theme={{
           colorScheme: 'light',
         }}
       >
-        <body>{children}</body>
+        <body className={montserrat.className}>{children}</body>
       </MantineProvider>
     </html>
   )
