@@ -87,10 +87,10 @@ export const AboutStatistic = () => {
   const t = useText()
   return (
     <div className={styles.stat_container} id="achievements">
-      <StatItem title={t('statistic-choristers')} count={20} />
-      <StatItem title={t('statistic-appearances')} count={1000} />
-      <StatItem title={t('statistic-tours')} count={50} />
-      <StatItem title={t('statistic-projects')} count={25} />
+      <StatItem title={t('statistic-choristers')} count={40} />
+      <StatItem title={t('statistic-appearances')} count={50} />
+      <StatItem title={t('statistic-tours')} count={5} />
+      <StatItem title={t('statistic-projects')} count={3} />
     </div>
   )
 }
