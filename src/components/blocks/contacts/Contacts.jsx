@@ -2,7 +2,7 @@
 import styles from './contacts.module.scss'
 import { PageBlock, Text, Block } from '@/common'
 import { useText } from '@/locales'
-import Form from './form'
+import Form from './Form'
 import CONFIG from '@/config/config.json'
 
 export const ContactDetails = () => {
