@@ -1,24 +1,28 @@
-// import Image from 'next/image'
+'use client'
 import styles from './concert-card.module.scss'
-import { Text, Link } from '@/common'
+import { Text, Link, Button } from '@/common'
 
-const ConcertCard = ({ image, title, description, date, link, isLast }) => {
+import { useLang, useText } from '@/locales'
+import { formatDate } from '@/utils/functions'
+
+const ConcertCard = ({ image, title, date, address, link, ...props }) => {
+  const { lang } = useLang()
+  const t = useText()
+
+  let formated_date = ''
+  if (date) formated_date = formatDate(date, lang)
+
   return (
-    <div
-      className={`${styles.container} ${isLast ? styles.container_last : ''}`}
-    >
-      <div className={styles.content}>
-        <div className={styles.content_top}>
-          <div className={styles.title}>{title}</div>
-          <div className={styles.date}>{date}</div>
-        </div>
-        <Text className={styles.description}>{description}</Text>
-
-        <Link href={link} isWhite>
-          Читати далі
-        </Link>
-      </div>
+    <div className={styles.container} {...props}>
       <img className={styles.illustration} src={image} alt={title} />
+      <div className={styles.title}>{title}</div>
+      <Text className={styles.subtitle}>
+        {formated_date} <br /> {address}
+      </Text>
+
+      <Link href={link}>
+        <Button color="yellow">{t('see')}</Button>
+      </Link>
     </div>
   )
 }

@@ -33,7 +33,7 @@ const Navigation = () => {
         >
           <ul className={styles.nav_links}>
             {links.map((link) => (
-              <Link href={routes[link]} key={link}>
+              <Link href={routes[link]} key={link} onClick={toggleMenu}>
                 <li className={styles.nav_link}>{t(link)}</li>
               </Link>
             ))}

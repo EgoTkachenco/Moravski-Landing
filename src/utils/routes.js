@@ -8,6 +8,7 @@ const routes = {
 
   videos: '/videos',
   gallery: '/gallery',
+  policy: '/policy',
 }
 
 export default routes

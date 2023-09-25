@@ -3,6 +3,7 @@ import styles from './contacts.module.scss'
 import { PageBlock, Text, Block } from '@/common'
 import { useText } from '@/locales'
 import Form from './form'
+import CONFIG from '@/config/config.json'
 
 export const ContactDetails = () => {
   const t = useText()
@@ -10,37 +11,37 @@ export const ContactDetails = () => {
     <div className={styles.cards_container}>
       <div className={styles.card} data-aos="fade-up">
         <Text type="h5" className={styles.card_title}>
-          Концерти
+          {t('concerts')}
         </Text>
-        <Text>Звʼяжіться з нами на рахунок концертів</Text>
+        <Text>{t('contact_about_concert')}</Text>
         <div className={styles.card_contacts}>
-          <Text className={styles.card_contacts_title}>Контакти:</Text>
-          <Text>+380681234567</Text>
-          <Text>concerts@moravski.com.ua</Text>
+          <Text className={styles.card_contacts_title}>{t('contacts')}:</Text>
+          <Text>{CONFIG.contact_phone}</Text>
+          <Text>{CONFIG.contact_concerts_mail}</Text>
         </div>
       </div>
 
       <div className={styles.card} data-aos="fade-up" data-aos-delay="100">
         <Text type="h5" className={styles.card_title}>
-          Прослуховування
+          {t('listening')}
         </Text>
-        <Text>Щоб записатись на прослуховування</Text>
+        <Text>{t('contact_about_listening')}</Text>
         <div className={styles.card_contacts}>
-          <Text className={styles.card_contacts_title}>Контакти:</Text>
-          <Text>+380681234567</Text>
-          <Text>sing@moravski.com.ua</Text>
+          <Text className={styles.card_contacts_title}>{t('contacts')}:</Text>
+          <Text>{CONFIG.contact_phone}</Text>
+          <Text>{CONFIG.contact_listening_mail}</Text>
         </div>
       </div>
 
       <div className={styles.card} data-aos="fade-up" data-aos-delay="200">
         <Text type="h5" className={styles.card_title}>
-          Гастролі
+          {t('tour')}
         </Text>
-        <Text>Щоб обговорити деталі наших гастролей</Text>
+        <Text>{t('contact_about_tour')}</Text>
         <div className={styles.card_contacts}>
-          <Text className={styles.card_contacts_title}>Контакти:</Text>
-          <Text>+380681234567</Text>
-          <Text>tours@moravski.com.ua</Text>
+          <Text className={styles.card_contacts_title}>{t('contacts')}:</Text>
+          <Text>{CONFIG.contact_phone}</Text>
+          <Text>{CONFIG.contact_tours_mail}</Text>
         </div>
       </div>
     </div>

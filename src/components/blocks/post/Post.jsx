@@ -1,5 +1,6 @@
 import styles from './post.module.scss'
 import { Text } from '@/common'
+import MoreNews from '@/components/blocks/news/MoreNews'
 
 const Post = ({ image, title, subtitle, content }) => {
   return (
@@ -19,7 +20,7 @@ const Post = ({ image, title, subtitle, content }) => {
         )}
       </div>
 
-      <div className={styles.more_posts}></div>
+      <MoreNews />
     </div>
   )
 }

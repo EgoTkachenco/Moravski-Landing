@@ -1,0 +1,32 @@
+.title {
+  margin-bottom: 50px;
+}
+
+.slide_image {
+  height: 400px;
+  position: relative;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.list {
+  display: flex;
+  gap: 40px;
+
+  & > * {
+    width: calc((100% - 80px) / 3);
+    min-height: 252px;
+
+    @media (max-width: $m-md) {
+      min-width: 100%;
+    }
+  }
+
+  @media (max-width: $m-md) {
+    flex-direction: column;
+  }
+}

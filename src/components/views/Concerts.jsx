@@ -1,19 +1,16 @@
 'use client'
-import ConcertCard from '../cards/concert-card/ConcertCard'
+import ConcertCard from '@/components/cards/concert-card/ConcertCard'
 import { PageBlock, List } from '@/common'
 import { useText } from '@/locales'
 import routes from '@/utils/routes'
+import { getConcerts } from '@/utils/api'
 
-const Concerts = ({ concerts }) => {
+const Concerts = () => {
   const t = useText()
   return (
     <PageBlock title={t('concerts')} breadcrumbs={['home', 'concerts']}>
       <List
-        data={concerts}
-        page={1}
-        total={1}
-        itemsPerRow={1}
-        onPageChange={() => {}}
+        service={getConcerts}
         renderItem={(concert, i) => (
           <ConcertCard
             key={i}
@@ -21,10 +18,10 @@ const Concerts = ({ concerts }) => {
             title={concert.title}
             description={concert.description}
             date={concert.date}
-            link={routes.concerts + '/' + concert.id}
+            address={concert.address}
+            link={routes.concerts + '/' + concert.slug}
             data-aos="fade-up"
             data-aos-delay={100 * (i % 3)}
-            isLast={i === concerts.length - 1}
           />
         )}
       />

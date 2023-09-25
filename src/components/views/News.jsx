@@ -2,6 +2,7 @@
 import { PageBlock, List } from '@/common'
 import NewsCard from '@/components/cards/news-card/NewsCard'
 import { useText } from '@/locales'
+import { getNews } from '@/utils/api'
 import routes from '@/utils/routes'
 
 const News = ({ news }) => {
@@ -9,11 +10,7 @@ const News = ({ news }) => {
   return (
     <PageBlock title={t('news')} breadcrumbs={['home', 'news']}>
       <List
-        data={news}
-        page={1}
-        total={1}
-        itemsPerRow={3}
-        onPageChange={() => {}}
+        service={getNews}
         renderItem={(news, i) => (
           <NewsCard
             key={i}

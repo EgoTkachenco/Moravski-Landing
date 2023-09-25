@@ -28,13 +28,17 @@
   "information": "Інформація",
   "policy": "Політика конфіденційності",
   "all-rights-reserved": "Усі права захищені",
+  "listening": "Прослуховування",
+  "tour": "Гастролі",
 
   "chamber-choir": "Камерний хор",
   "moravski": "Moravski",
   "join-us": "Приєднатись до нас",
   "more": "Детальніше",
   "read-more": "Читати більше",
+  "read-next": "Читати далі",
   "see-all": "Переглянути всі",
+  "see": "Переглянути",
 
   "policy.text1": "Залишаючи дані на сайті, ви погоджуєтеся з інформацією Політики конфіденційності та захисту.",
   "policy.title2": "Захист даних",
@@ -88,23 +92,35 @@
   "support-info-account-value": "UA443052990000026004005039008",
   "support-info-bank-label": "Назва банку",
   "support-info-bank-value": "АТ КБ \"ПРИВАТБАНК\"",
+  "support-disable": "*Якщо ви хочете відключити щомісячний платіж, зв'яжіться з нами moravski@gmail.com",
 
   "see-concerts-title": "Перегляньте незабутні концерти, які вас зачарують",
+  "see-other-concerts": "Перегляньте інші концерти",
 
   "news-more": "Дізнайтеся більше цікавої інформації",
+  "news-other": "Інші статті",
 
   "contact-form-title": "Звʼяжіться з нами",
   "contact-form-text": "Ми відповімо на усі ваші питання",
 
   "contact-form-name-label": "Ім'я",
   "contact-form-name-placeholder": "Введіть ваше імʼя",
+  "contact-form-name-error": "Ім'я обов'язкове",
   "contact-form-phone-label": "Телефон",
   "contact-form-phone-placeholder": "Введіть ваш телефон",
+  "contact-form-phone-error": "Телефон обов'язковий",
   "contact-form-mail-label": "Пошта",
   "contact-form-mail-placeholder": "Введіть вашу пошту",
+  "contact-form-mail-error": "Пошта обов'язкова",
+  "contact-form-mail-error-invalid": "Неправильна пошта",
   "contact-form-message-label": "Повідомлення",
   "contact-form-message-placeholder": "Введіть ваше повідомлення",
+  "contact-form-message-error": "Повідомлення обов'язкове",
   "contact-form-agree": "Натисніть тут, щоб підтвердити, що ви прочитали та погоджуєтеся з умовами, представленими в угоді про <a href=\"/policy\">Політику конфіденційності</a>.",
   "contact-form-send": "Надіслати",
+
+  "contact_about_concert": "Звʼяжіться з нами на рахунок концертів",
+  "contact_about_listening": "Щоб записатись на прослуховування",
+  "contact_about_tour": "Щоб обговорити деталі наших гастролей",
   "": ""
 }

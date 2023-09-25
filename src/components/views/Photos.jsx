@@ -8,8 +8,6 @@ const Photos = ({ photos }) => {
     <PageBlock title={t('photos')} breadcrumbs={['home', 'photos']}>
       <List
         data={photos}
-        page={1}
-        total={1}
         renderItem={(item) => (
           <ImagePreview src={item.image} title={item.title} />
         )}

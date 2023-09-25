@@ -1,6 +1,9 @@
 {
   "contact_phone": "+380 68 123 45 67",
   "contact_mail": "moravski.choir@gmail.com",
+  "contact_concerts_mail": "concerts@moravski.com.ua",
+  "contact_listening_mail": "sing@moravski.com.ua",
+  "contact_tours_mail": "tours@moravski.com.ua",
   "social_accounts": {
     "youtube": "https://youtube.com",
     "facebook": "https://facebook.com",

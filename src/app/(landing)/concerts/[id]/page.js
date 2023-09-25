@@ -1,21 +1,20 @@
 import ConcertDetails from '@/components/views/ConcertDetails'
-import concerts from '@/config/concerts.json'
+import { getConcert, getConcerts } from '@/utils/api'
 import { ConcertsMetadata } from '@/utils/metadatas'
 
 export const metadata = ConcertsMetadata
 
 const NewsDetailsPage = async ({ params }) => {
-  const concert = concerts.find((concert) => concert.id === params.id)
-  // return <ConcertDetails concert={concert} />
-  return 'Concert'
+  const concert = await getConcert(params.id)
+  return <ConcertDetails concert={concert} />
 }
 
 export default NewsDetailsPage
 
 export const getStaticPaths = async () => {
+  const concerts = await getConcerts()
   return {
-    paths: [{ params: { id: '1' } }],
-    // concerts.map(({ id }) => ({ params: { id } })),
+    paths: concerts.data.map(({ slug }) => ({ params: { id: slug } })),
     fallback: false,
   }
 }

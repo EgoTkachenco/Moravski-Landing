@@ -1,5 +1,5 @@
 'use client'
-import styles from './concerts-preview.module.scss'
+import styles from './concerts.module.scss'
 import { Text } from '@/common'
 import { Block, BlockTop } from '@/common/block/Block'
 import ConcertsCarousel from './ConcertsCarousel'

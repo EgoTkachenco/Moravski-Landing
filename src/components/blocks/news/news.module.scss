@@ -6,3 +6,30 @@
   display: flex;
   gap: 40px;
 }
+
+.more_news {
+  min-width: 360px;
+  width: 360px;
+  padding: 32px 24px;
+  background-color: #e2e2e2;
+  background: url(/other-posts-back.svg);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.more_news_title {
+  color: $c-dark;
+  font-weight: 600;
+}
+
+.more_news_post {
+  color: $c-dark;
+}
+.more_news_post_illustration {
+  width: 100%;
+}
+.more_news_post_title {
+  margin: 12px 0 10px;
+  font-weight: 600;
+}

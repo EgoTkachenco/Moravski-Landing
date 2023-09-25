@@ -1,16 +1,48 @@
 'use client'
+import { useState, useEffect } from 'react'
 import styles from './list.module.scss'
 import Pagination from '../pagination/Pagination'
+import { useLang } from '@/locales'
 
 const List = ({
-  data = [],
-  page,
-  total,
+  data: initialData,
+  service,
   itemsPerRow = 3,
-  onPageChange = () => {},
   renderItem = (item, i) => <div>{i}</div>,
 }) => {
+  const { lang } = useLang()
+  const [state, setState] = useState(null)
   const n = itemsPerRow
+
+  useEffect(() => {
+    if (service) getData()
+  }, [service])
+
+  useEffect(() => {
+    if (initialData)
+      setState({
+        page: 1,
+        data: initialData,
+        total: 1,
+      })
+  }, [initialData])
+
+  const onPageChange = () => {}
+
+  const getData = (page) => {
+    service(page, lang === 'en').then((data) => {
+      setState({
+        page: data.current_page,
+        data: data.data,
+        total: data.last_page,
+      })
+    })
+  }
+
+  if (state === null) return 'loading'
+
+  const { data, page, total } = state
+
   return (
     <>
       <div className={styles.list}>

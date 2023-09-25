@@ -64,7 +64,9 @@ const Form = ({ onSubmit }) => {
       <Button color="yellow">{t('contact-form-send')}</Button>
 
       <Checkbox
-        label={t('contact-form-agree')}
+        label={
+          <div dangerouslySetInnerHTML={{ __html: t('contact-form-agree') }} />
+        }
         {...form.getInputProps('isAgree')}
       />
     </form>

@@ -4,12 +4,11 @@ import { EffectCoverflow } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/parallax'
 import 'swiper/css/effect-coverflow'
-import styles from './concerts-preview.module.scss'
+import styles from './concerts.module.scss'
 import { Link } from '@/common'
 import routes from '@/utils/routes'
 
 const ConcertsCarousel = ({ concerts = [] }) => {
-  console.log(concerts)
   return (
     <Swiper
       loop={true}
@@ -44,7 +43,6 @@ const ConcertsCarousel = ({ concerts = [] }) => {
         },
       }}
       data-aos="fade-up"
-      // onSwiper={(swiper) => console.log(swiper)}
     >
       {concerts.map((slide, i) => (
         <SwiperSlide key={i}>
