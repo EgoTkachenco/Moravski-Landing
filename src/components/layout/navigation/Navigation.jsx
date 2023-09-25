@@ -15,6 +15,7 @@ const Navigation = () => {
   const isTop = useIsTop(isAnimation)
   const [open, setOpen] = useState(false)
   const toggleMenu = () => setOpen(!open)
+  const closeMenu = () => setOpen(false)
   const { lang, setLang } = useLang()
   const toggleLang = () => setLang(lang === 'ua' ? 'en' : 'ua')
   const t = useText()
@@ -33,7 +34,7 @@ const Navigation = () => {
         >
           <ul className={styles.nav_links}>
             {links.map((link) => (
-              <Link href={routes[link]} key={link} onClick={toggleMenu}>
+              <Link href={routes[link]} key={link} onClick={closeMenu}>
                 <li className={styles.nav_link}>{t(link)}</li>
               </Link>
             ))}
