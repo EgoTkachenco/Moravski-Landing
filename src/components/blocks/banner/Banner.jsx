@@ -24,6 +24,7 @@ const Banner = () => {
           href={routes['support-us']}
           data-aos="fade-up"
           data-aos-delay="450"
+          data-aos-anchor-placement="bottom"
         >
           {t('support-us')}
         </LinkWithIcon>

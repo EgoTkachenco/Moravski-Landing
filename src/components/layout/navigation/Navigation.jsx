@@ -21,7 +21,7 @@ const Navigation = () => {
   const t = useText()
 
   return (
-    <nav className={`${styles.nav} ${isTop ? '' : styles.nav_white}`}>
+    <nav className={`${styles.nav} ${isTop && !open ? '' : styles.nav_white}`}>
       <div className={styles.nav_inner}>
         <Link href={routes.home}>
           <img src="/logo.svg" className={styles.nav_logo} alt="Moravski" />

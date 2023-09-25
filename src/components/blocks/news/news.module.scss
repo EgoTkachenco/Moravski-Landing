@@ -5,6 +5,11 @@
 .preview_list {
   display: flex;
   gap: 40px;
+
+  @media (max-width: $m-md) {
+    flex-direction: column;
+    gap: 32px;
+  }
 }
 
 .more_news {

@@ -26,9 +26,12 @@ export const AboutChoir = ({ image = '/about.png' }) => {
           {t('choir-about-text')}
         </Text>
       </div>
-      <div className={styles.content_bottom} data-aos="fade-up">
-        <img src={image} alt="About Moravski" />
-      </div>
+      <img
+        src={image}
+        alt="About Moravski"
+        className={styles.content_bottom}
+        data-aos="fade-up"
+      />
     </>
   )
 }
@@ -140,9 +143,12 @@ export const AboutHistory = () => {
           {t('about-history-text')}
         </Text>
       </div>
-      <div className={styles.content_bottom} data-aos="fade-up">
-        <img src="/about.png" alt="About Moravski" />
-      </div>
+      <img
+        className={styles.content_bottom}
+        data-aos="fade-up"
+        src="/about.png"
+        alt="About Moravski"
+      />
     </>
   )
 }

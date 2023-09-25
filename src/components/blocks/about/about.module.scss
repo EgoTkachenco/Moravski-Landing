@@ -27,15 +27,13 @@
 }
 
 .content_bottom {
-  position: relative;
-  height: 550px;
+  max-height: 550px;
   width: 100%;
   margin-top: 50px;
+  object-fit: cover;
 
-  img {
-    height: 100%;
+  @media (max-width: $m-md) {
     width: 100%;
-    object-fit: cover;
   }
 }
 
