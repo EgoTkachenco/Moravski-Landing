@@ -2,7 +2,7 @@
 import styles from './breadcrumbs.module.scss'
 import Text from '../text/Text'
 import { useText } from '@/locales'
-import Link from 'next/link'
+import { Link } from '../link/Link'
 import { Fragment } from 'react'
 import routes from '@/utils/routes'
 
