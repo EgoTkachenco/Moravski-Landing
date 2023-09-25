@@ -6,6 +6,13 @@ import { useLang } from '@/locales'
 import { useEffect } from 'react'
 import { MantineProvider } from '@mantine/core'
 import Head from 'next/head'
+import { Montserrat } from 'next/font/google'
+
+const montserrat = Montserrat({
+  weight: ['400', '500', '600'],
+  style: ['normal'],
+  display: 'swap',
+})
 
 export default function RootLayout({ children }) {
   const { lang } = useLang()
@@ -37,12 +44,11 @@ export default function RootLayout({ children }) {
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap"
-          rel="stylesheet"
-        ></link>
+        <style jsx global>{`
+          html {
+            font-family: ${montserrat.style.fontFamily};
+          }
+        `}</style>
       </Head>
       <MantineProvider
         theme={{
